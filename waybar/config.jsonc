@@ -1,0 +1,90 @@
+{
+    "layer": "top",
+
+    "spacing": 3,
+    "margin-top": 12,
+
+    "modules-center": [
+        "clock",
+        "hyprland/workspaces",
+        "backlight",
+        "pulseaudio",
+        "network",
+        "battery",
+        "bluetooth"
+    ],
+    "clock": {
+        "format": "{:%I:%M %p} ",
+        "tooltip-format": "{calendar}"
+    },
+    "hyprland/workspaces": {
+	"format": "{name}",
+	"format-icons": {
+		"1": "1",
+		"2": "2",
+		"3": "3",
+		"4": "4",
+		"5": "5",
+		"active": "",
+		"default": ""
+	},
+       "persistent-workspaces": {
+             "*": 5// 5 workspaces by default on every monitor
+       }
+},
+    "backlight": {
+        "format":"{percent}%{icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}   ",
+        "format-muted": "",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    "network": {
+        "format-wifi": "{essid}    ",
+        "format-ethernet": "Connected ",
+        "format-disconnected": "Offline ⚠"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}  ",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
+    },
+"bluetooth": {
+    "format": "   {status}  ",
+    "format-disabled": " off",
+    "format-connected": " {num_connections} connected",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueman-manager"
+}
+}
